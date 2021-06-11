@@ -70,7 +70,6 @@ inline void horizontalOscillation2dir(SDL_Texture* src, SDL_Texture* dst, float 
 }
 
 //Source texture gets a vertical wave
-//High amplitude causes artifacts
 inline void verticalOscillation(SDL_Texture* src, SDL_Texture* dst, float timerOffset, float revDivider, int amplitude)
 {
 	int w, h;
@@ -91,7 +90,7 @@ inline void verticalOscillation(SDL_Texture* src, SDL_Texture* dst, float timerO
 			lineOffset = -i;
 		if (i + lineOffset > 719)
 			lineOffset = 719 - i;
-		memcpy((void*)((int)pix_tex2 + (i + lineOffset) * pitch1), (void*)((int)pix_tex1 + i * pitch1), pitch1);
+		memcpy((void*)((int)pix_tex2 + i * pitch1), (void*)((int)pix_tex1 + (i + lineOffset) * pitch1), pitch1);
 	}
 
 	SDL_UnlockTexture(src);

@@ -54,11 +54,10 @@ int SDL_main(int argc, char* args[])
 		timer += PI / 50;
 		while (timer >= PI * 2)
 		{
-			cout << "Cleaned!\n";
 			timer -= PI * 2;
 		}
 
-		verticalOscillation(tex1, tex2, timer, 180, 20);
+		verticalOscillation(tex1, tex2, timer, 180, 50);
 		SDL_SetTextureAlphaMod(tex2, 126);
 		horizontalOscillation2dir(tex1, tex3, timer, 180, 20);
 		SDL_SetTextureAlphaMod(tex3, 126);
